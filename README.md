@@ -8,11 +8,9 @@ A repository for learning spring-boot. Each commit introduces a different featur
 - Gradle
 - A nice IDE (Intellij Idea, VS Code, Eclipse, etc)
 
-## Installing Pre-requisites
+## Installing Java 17  
 
-### Java 17  
-
-Try installing with `brew`
+### Installing with `brew`
 
 ```bash
 brew install openjdk
@@ -24,7 +22,27 @@ Check java version after successful installation
 java -version
 ```
 
-If you don't see the required version, try the following method
+If you don't see the required version, try either of the following options.
+
+### Installing with `sdkman`
+
+```bash
+curl -s "https://get.sdkman.io" | bash
+```
+
+Use below command to see what you could install
+
+```bash
+sdk list java
+```
+
+Install the desired version
+
+```bash
+sdk install java 17.0.3-oracle
+```
+
+### Installing from `jdk archive downloads`
 
 Download Java 17 from [jdk17-archive-downloads](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) and install it.
 
@@ -33,24 +51,6 @@ Check java version after successful installation
 ```bash
 java -version
 ```
-
-### Gradle
-
-Installing with `brew`
-
-```bash
-brew install gradle
-```
-
-## Create application 
-
-* Go to [start.spring.io](https://start.spring.io/) and make selections as shown in the screenshot below.
-
-![alt text](generate-project.png "generate project from start.spring.io")
-
-* Click on `Generate` to download generated application archive
-
-* Un-archive your application to your workspace location
 
 ## Build
 
@@ -71,3 +71,9 @@ Check your endpoints
 ```bash
 curl localhost:8080/greeting/10
 ```
+
+## References
+
+* [start.spring.io](https://start.spring.io/)
+* [sdkman.io](https://sdkman.io/)
+* [How to create initial application with spring initializer](create-application-wth-spring-initializer.md)
