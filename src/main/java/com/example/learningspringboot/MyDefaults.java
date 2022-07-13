@@ -12,8 +12,8 @@ public class MyDefaults {
     private String city;
 
     public MyDefaults(
-            @Value("${defaults.age}") int age,
-            @Value("${defaults.city}") String city) {
+            @Value("${defaults.age:20}") int age,
+            @Value("${defaults.city:new-jersey}") String city) {
         this.age = age;
         this.city = city;
     }
