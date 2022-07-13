@@ -1,15 +1,15 @@
 package com.example.learningspringboot;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class PersonRepository {
 
+    private final MyDefaults defaults;
+
     public Person findPerson(String name) {
-        Person p = new Person();
-        p.setAge(30);
-        p.setCity("new-york");
-        p.setName(name);
-        return p;
+        return new Person(name, defaults.getAge(), defaults.getCity());
     }
 }

@@ -3,9 +3,8 @@ package com.example.learningspringboot;
 import lombok.Value;
 
 @Value
-public class Person {
+public class MyDefaults {
 
-    private String name;
     private int age;
     private String city;
 
