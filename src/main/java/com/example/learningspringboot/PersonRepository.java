@@ -1,15 +1,12 @@
 package com.example.learningspringboot;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 
-@Component
-@RequiredArgsConstructor
-public class PersonRepository {
+import java.util.List;
 
-    private final MyDefaults defaults;
+public interface PersonRepository extends CrudRepository<PersonEntity, Long> {
 
-    public Person findPerson(String name) {
-        return new Person(name, defaults.getAge(), defaults.getCity());
-    }
+    List<PersonEntity> findByName(String name);
+
 }

@@ -1,3 +1,12 @@
 defaults:
   age: 41
   city: detroit
+spring:
+  jpa:
+    show-sql: true
+  hibernate:
+    ddl-auto: none
+  datasource:
+    url: jdbc:mysql://localhost:13306/testdb
+    username: root
+    password: my-secret-pw

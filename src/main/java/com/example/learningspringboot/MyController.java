@@ -20,7 +20,7 @@ public class MyController {
     }
 
     @GetMapping("/people/{name}")
-    public Person findPerson(@PathVariable("name") String name) {
-        return personRepository.findPerson(name);
+    public PersonEntity findPerson(@PathVariable("name") String name) {
+        return personRepository.findByName(name).get(0);
     }
 }
