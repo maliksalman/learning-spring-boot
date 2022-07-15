@@ -10,3 +10,6 @@ spring:
     url: jdbc:mysql://localhost:13306/testdb
     username: root
     password: my-secret-pw
+heroes:
+  base-url: http://localhost:9090
+  old-threshold: 29
