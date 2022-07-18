@@ -5,11 +5,7 @@ spring:
   jpa:
     show-sql: true
   hibernate:
-    ddl-auto: none
-  datasource:
-    url: jdbc:mysql://localhost:13306/testdb
-    username: root
-    password: my-secret-pw
+    ddl-auto: true
 heroes:
   base-url: http://localhost:9090
   old-threshold: 29

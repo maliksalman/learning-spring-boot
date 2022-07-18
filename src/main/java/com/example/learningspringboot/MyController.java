@@ -1,16 +1,15 @@
 package com.example.learningspringboot;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 public class MyController {
 
     private final PersonRepository personRepository;
+    private final ErrorGenerator generator;
 
     @GetMapping("/greeting/{count}")
     public String greeting(
@@ -22,5 +21,10 @@ public class MyController {
     @GetMapping("/people/{name}")
     public PersonEntity findPerson(@PathVariable("name") String name) {
         return personRepository.findByName(name).get(0);
+    }
+
+    @GetMapping("/error/{code}")
+    public String generateError(@PathVariable("code") int code) {
+        return generator.generateErrorIfAny(code);
     }
 }
