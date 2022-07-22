@@ -1,8 +1,11 @@
 package com.example.learningspringboot;
 
-import lombok.Value;
+import lombok.*;
 
-@Value
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Person {
 
     private String name;
